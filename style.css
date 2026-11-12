@@ -1,0 +1,47 @@
+* { box-sizing: border-box; }
+:root { font-family: Tahoma, Verdana, sans-serif; color: #111; background: #008080; }
+body { margin: 0; min-height: 100vh; padding: 10px; font-size: 13px; }
+button, input, select { font: inherit; }
+.titlebar { height: 30px; background: linear-gradient(90deg,#000080,#1084d0); color: white; display:flex; align-items:center; justify-content:space-between; padding: 3px 5px 3px 9px; font-weight:bold; }
+.window-buttons { display:flex; gap:3px; }
+.window-buttons button { width:23px; height:21px; padding:0; border:2px outset #fff; background:#c0c0c0; color:#111; font-weight:bold; }
+.menubar { display:flex; gap:22px; background:#c0c0c0; padding:7px 10px; border:2px outset #fff; border-top:0; }
+.workspace { display:grid; grid-template-columns: 165px minmax(260px,1fr) 195px; gap:8px; margin-top:8px; min-height:calc(100vh - 66px); }
+.panel { background:#c0c0c0; border:2px outset #fff; padding:8px; min-width:0; }
+.panel h2 { font-size:14px; margin:0 0 10px; }
+.hint { color:#444; font-size:11px; line-height:1.4; }
+.tool-list { max-height:70vh; overflow:auto; }
+.tool, #delete-control, #save-project, #load-project, #install-app { display:block; width:100%; text-align:left; margin:6px 0; padding:7px; background:#c0c0c0; color:#111; border:2px outset #fff; }
+.tool:active, #delete-control:active, #save-project:active, #load-project:active { border-style:inset; }
+.design-area { display:flex; flex-direction:column; gap:7px; min-width:0; }
+.screen-panel { flex:1; display:flex; flex-direction:column; padding:6px; }
+.panel-heading { font-weight:bold; padding:3px 4px 8px; }
+.canvas { position:relative; flex:1; min-height:480px; background:#fff; border:2px inset #000; overflow:auto; }
+.empty-note { color:#777; text-align:center; margin-top:180px; pointer-events:none; }
+.control { position:absolute; min-height:28px; margin:0; padding:5px 9px; cursor:move; user-select:none; }
+.control.selected { outline:2px dotted #000080; outline-offset:2px; }
+.control.button, .control.input, .control.checkbox, .control.select, .control.radio, .control.window, .control.panel, .control.image { background:#c0c0c0; color:#111; border:2px outset #fff; }
+.control.label { border:0; background:transparent; text-align:left; cursor:move; }
+.control.input { background:white; border:2px inset #000; cursor:text; }
+.control.checkbox, .control.radio { width:max-content; }
+.control.window { min-height:110px; padding:0; }
+.window-title { background:linear-gradient(90deg,#000080,#1084d0); color:white; font-weight:bold; padding:5px; }
+.window-body { padding:12px; color:#222; }
+.control.image { display:grid; place-items:center; border:2px inset #000; background:#eee; color:#555; }
+.control.progress { height:20px; padding:2px; border:2px inset #000; background:#c0c0c0; }
+.progress-fill { height:100%; width:55%; background:#000080; }
+.control.slider { padding:7px; }
+.control.panel { min-height:80px; background:#ddd; border:2px inset #000; }
+.bottom-bar { display:flex; justify-content:space-between; background:#c0c0c0; border:2px inset #fff; padding:5px 8px; font-size:11px; }
+.properties label { display:block; margin:10px 0; font-size:12px; }
+.properties input { width:100%; margin-top:4px; padding:5px; border:2px inset #000; }
+.properties input:disabled { background:#ddd; }
+#delete-control:disabled { color:#777; }
+@media (max-width:700px) {
+ body { padding:5px; }
+ .workspace { grid-template-columns:1fr 1fr; }
+ .design-area { grid-column:1 / -1; grid-row:1; }
+ .toolbox { grid-column:1; }
+ .properties { grid-column:2; }
+ .canvas { min-height:380px; }
+}

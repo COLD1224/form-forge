@@ -1,0 +1,9 @@
+{
+  "name": "FormForge Visual App Builder",
+  "short_name": "FormForge",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#c0c0c0",
+  "theme_color": "#c0c0c0",
+  "description": "A classic desktop-style visual app builder."
+}

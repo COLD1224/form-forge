@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#c0c0c0">
+  <meta name="description" content="FormForge visual app builder">
+  <title>FormForge 0.2</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="titlebar">
+    <span>▣ FormForge 0.2</span>
+    <span class="window-buttons"><button aria-label="Minimize">_</button><button aria-label="Maximize">□</button><button aria-label="Close">×</button></span>
+  </header>
+  <nav class="menubar"><span>File</span><span>Edit</span><span>View</span><span>Project</span><span>Help</span></nav>
+  <main class="workspace">
+    <aside class="panel toolbox">
+      <h2>Toolbox</h2>
+      <p class="hint">Tap or drag a widget onto the screen.</p>
+      <div class="tool-list">
+        <button class="tool" draggable="true" data-kind="button">Button</button>
+        <button class="tool" draggable="true" data-kind="label">Label</button>
+        <button class="tool" draggable="true" data-kind="input">Text box</button>
+        <button class="tool" draggable="true" data-kind="checkbox">Checkbox</button>
+        <button class="tool" draggable="true" data-kind="window">Window</button>
+        <button class="tool" draggable="true" data-kind="image">Image placeholder</button>
+        <button class="tool" draggable="true" data-kind="slider">Slider</button>
+        <button class="tool" draggable="true" data-kind="progress">Progress bar</button>
+        <button class="tool" draggable="true" data-kind="select">Dropdown</button>
+        <button class="tool" draggable="true" data-kind="radio">Radio button</button>
+        <button class="tool" draggable="true" data-kind="panel">Panel</button>
+      </div>
+    </aside>
+    <section class="design-area">
+      <div class="panel screen-panel">
+        <div class="panel-heading">Screen1 — Designer <span class="hint">· Drag widgets to reposition</span></div>
+        <div id="canvas" class="canvas" aria-label="App screen canvas">
+          <div class="empty-note">Choose or drag a widget from the Toolbox to begin.</div>
+        </div>
+      </div>
+      <div class="bottom-bar"><span id="status">Ready</span><span>Project: Untitled</span></div>
+    </section>
+    <aside class="panel properties">
+      <h2>Properties</h2>
+      <p id="selection-hint" class="hint">Select a widget to edit it.</p>
+      <label>Text <input id="prop-text" type="text" disabled></label>
+      <label>Name <input id="prop-name" type="text" disabled></label>
+      <label>Width <input id="prop-width" type="number" min="40" max="500" disabled></label>
+      <label>Left <input id="prop-x" type="number" min="0" max="2000" disabled></label>
+      <label>Top <input id="prop-y" type="number" min="0" max="2000" disabled></label>
+      <button id="delete-control" disabled>Delete selected</button>
+      <hr>
+      <button id="save-project">Save project</button>
+      <button id="load-project">Open project</button>
+      <button id="install-app" hidden>Install FormForge</button>
+      <p id="update-status" class="hint">Update system: checking when hosted.</p>
+    </aside>
+  </main>
+  <input id="file-picker" type="file" accept=".fforge,.json" hidden>
+  <script src="app.js"></script>
+</body>
+</html>
